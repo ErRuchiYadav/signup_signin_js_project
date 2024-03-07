@@ -1,0 +1,117 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="../boot/css/all.min.css">
+        <link rel="stylesheet" href="../boot/css/bootstrap.min.css">
+        <style>
+            .n{
+                min-height: 400px;
+                border-radius: 8px;
+            }
+            h2{
+                font-weight: 700;
+            }
+            p{
+                font-size: 17px;
+            }
+            a{
+                text-decoration: none;
+            }
+            #p1{
+                font-size: 15px;
+            }
+            input{
+                height: 45px;
+                margin: 18px 0px;
+                border: 2px solid rgb(162, 162, 162) !important;
+            }
+            ::placeholder{
+                font-weight: 500;
+            }
+        </style>
+    </head>
+    <body class="bg-primary">
+        <div class="container-fluid ">
+            <div class="row">
+                <div class="col-sm-4 n bg-light mx-auto my-5 p-4">
+                    <div id="s">
+                        <h2 class="text-center">Join Us today!</h2>
+                        <p class="text-center">Sign up now to become a member.</p>
+                        <form action=""></form>
+                        <input type="text" name="" id="" placeholder="Enter Name" class="form-control" required>
+                        <input type="email" name="" id="e" placeholder="Enter Email" class="form-control" required>
+                        <input type="password" name="" id="p" placeholder="Choose A Password" class="form-control" required pattern="{8}">
+                        <input type="password" name="" id="rp" placeholder="Re-Enter Password" class="form-control" required pattern="{8}">
+                        <span></span>
+                        <input type="submit" value="Signup" class="form-control  btn btn-primary border border-0" onclick="Signup()">
+                        <p id="p1" class="text-center">Already a member? <a href="" onclick="demo()">Login Here</a></p>
+                    </form>
+                    </div>
+                    <div id="l">
+                        <form action="">
+                        <h2 class="text-center">Welcome back!</h2>
+                        <p class="text-center">Log in access your account.</p>
+                        <input type="email" name="" id="le" placeholder="Enter Email" class="form-control" required>
+                        <input type="password" name="" id="lp" placeholder="Choose A Password" class="form-control" required>
+                        <input type="submit" value="Login" class="form-control btn btn-primary border border-0" onclick="login()">
+                        <p id="p1" class="text-center">Not a member? <a href="#" onclick="demo1()">Signup Here</a></p>
+                        <p id="p2"></p>
+                    </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+      <script>
+            var s = document.querySelector("#s")
+            var l = document.querySelector("#l")
+            s.style.display="none"
+            function demo(){
+                s.style.display="block"
+                l.style.display="none"
+            }
+            function demo1(){
+                s.style.display="block"
+                l.style.display="none"
+            }
+            var e = document.querySelector("#e")
+            var p = document.querySelector("#p")
+            var z =[p.value]
+            var e = [e.value]
+            function Signup(){ 
+                var rp = document.querySelector("#rp")
+                if (p.value!="",rp.value!=""){
+                    if (p.value==rp.value){
+                    alert("Signup successfuly!")
+                    }
+                    else{
+                        document.querySelector("span").innerHTML="Please Enter same password!"
+                        document.querySelector("span").style.color="red"
+                        rp.style.border="2px solid red !important"
+                        p.style.border="2px solid red !important"
+                    }
+                }
+                else{
+                    alert("Please enter all data!")
+                }
+            }
+            function login(){
+                var le = document.querySelector("#le")
+                var lp = document.querySelector("#lp")
+                if (le.value!="",lp.value!=""){
+                    if (p.value==lp.value,e.value==le.value){
+                    alert("Login successfuly!")
+                    }
+                    else{
+                        document.querySelector("#p2").innerHTML="Incorrect Email or password!"
+                        document.querySelector("#p2").style.color="red"
+                        le.style.border="2px solid red !important"
+                        lp.style.border="2px solid red !important"
+                    }
+                }
+                else
+                {
+                    alert("Please enter all data!")
+                }
+            }
+        </script>
+    </body>
+</html>
